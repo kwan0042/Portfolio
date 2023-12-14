@@ -1,3 +1,10 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-bg: hsl(0, 0%, 5%);
+    --c-text: hsl(0, 0%, 95%);
+  }
+}
+
 Style Attribute {
   --c-bg: hsl(0, 0%, 90%);
   --c-text: hsl(0, 0%, 10%);
@@ -9,6 +16,7 @@ Style Attribute {
 
 :root {
   --pad: max(20px, 4vmin);
+  --c-text: hsl(0, 0%, 10%);
 }
 
 @mixin sp-layout {
@@ -301,4 +309,54 @@ li {
 .content {
   position: fixed;
   z-index: 10;
+}
+
+.EnterView {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  will-change: opacity;
+  background-color: white;
+  color: var(--c-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5em;
+  font-size: 30px;
+}
+
+.EnterView ._t1 {
+  font-weight: 400;
+}
+
+._t1 {
+  opacity: 0;
+}
+._t2 {
+  opacity: 0;
+}
+
+.opacity_1 {
+  opacity: 1;
+  transition: opacity 1s 1s;
+}
+.opacity_2 {
+  opacity: 1;
+  transition: opacity 1s 2s;
+}
+.opacity_3 {
+  opacity: 0;
+  transition: opacity 1s 1s;
+}
+.opacity_4 {
+  opacity: 0;
+  transition: opacity 1s 1.5s;
+}
+
+.EnterView ._t2 {
+  font-weight: 200;
 }

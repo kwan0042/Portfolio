@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import WebProjects from "./WebProjects";
-import GraphicProjects from "./GraphicProjects";
-import VideoProjects from "./VideoProjects";
-import Home from "./Home";
+import WebProjects from "./component/WebProjects";
+import GraphicProjects from "./component/GraphicProjects";
+import VideoProjects from "./component/VideoProjects";
+import Home from "./component/Home";
 import "./index.scss";
 
 function App() {
