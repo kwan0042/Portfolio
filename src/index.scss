@@ -257,7 +257,7 @@ body {
 
 .header {
   position: fixed;
-  z-index: 10;
+  z-index: 88;
   left: calc(var(--pad) * 2);
   top: calc(var(--pad) * 2);
   mix-blend-mode: difference;
@@ -268,28 +268,25 @@ body {
 }
 
 .headerNav {
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
-.headerNav ol {
+.headerNav {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
 }
-.headerNav ol li {
-  pointer-events: none;
+
+.nav-underline {
+  --bs-nav-underline-gap: 0rem !important;
+  --bs-nav-link-color: white !important;
+  --bs-nav-underline-link-active-color: white !important;
 }
 
-ol {
-  padding-left: 0 !important;
-}
-li {
-  list-style: none;
+.nav {
+  --bs-nav-link-hover-color: white !important;
 }
 
-.link {
-  --bs-nav-link-color: aliceblue !important;
-}
 .headerLabel {
   font-family: "Neue Montreal Mono";
   font-size: 20px;

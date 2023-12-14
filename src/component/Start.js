@@ -26,7 +26,7 @@ export default function Start() {
     setTimeout(() => {
       setVisible(false);
     }, 5000);
-  }, [setOpacity30]);
+  }, []);
 
   return visible ? (
     <>

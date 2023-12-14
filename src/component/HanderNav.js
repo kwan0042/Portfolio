@@ -1,15 +1,8 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import Nav from "react-bootstrap/Nav";
+import { useState } from "react";
 
-export default function CoverP() {
-  const StyledLink = styled(Link)`
-    text-decoration: none;
-    --bs-nav-link-color: aliceblue !important;
-    color: white;
-    &: hover {
-      color: black;
-    }
-  `;
+export default function HanderNav(props) {
   return (
     <div className="header">
       <img
@@ -20,13 +13,28 @@ export default function CoverP() {
 
       <p className="headerLabel">Designer &amp; Developer</p>
 
-      <nav className="headerNav">
-        <ol>
-          <StyledLink to="/webPJ">Web Projects</StyledLink>
-          <StyledLink to="/graphPJ">Graphic Projects</StyledLink>
-          <StyledLink to="/videoPJ">Video Projects</StyledLink>
-        </ol>
-      </nav>
+      <Nav className="headerNav" variant="underline" activeKey={props.navSel}>
+        <Nav.Item>
+          <Nav.Link as={Link} to="/home" eventKey="home">
+            Home
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link as={Link} to="/web" eventKey="web">
+            Web Projects
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link as={Link} to="/graphic" eventKey="graphic">
+            Graphic Projects
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link as={Link} to="/video" eventKey="video">
+            Video Projects
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
     </div>
   );
 }
