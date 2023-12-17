@@ -1,9 +1,6 @@
-import Stars from "./Stars";
-
 export default function Layout() {
   return (
     <>
-      <Stars />
       <div className="mask">
         <div className="mask-top"></div>
         <div className="mask-bottom"></div>

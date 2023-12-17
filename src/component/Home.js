@@ -1,10 +1,8 @@
-import HanderNav from "./HanderNav";
-import Layout from "./Layout";
+import HanderNav from "./Main/HanderNav";
 
 export default function Home() {
   return (
     <div className="content">
-      <Layout />
       <HanderNav navSel="home" />
       <div className="">
         <p>about me</p>

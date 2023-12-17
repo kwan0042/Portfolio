@@ -1,9 +1,7 @@
-import Layout from "./Layout";
-import HanderNav from "./HanderNav";
+import HanderNav from "./Main/HanderNav";
 export default function VideoProjects() {
   return (
     <div>
-      <Layout />
       <HanderNav navSel="video" />
     </div>
   );

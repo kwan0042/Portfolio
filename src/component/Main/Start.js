@@ -22,10 +22,10 @@ export default function Start() {
     setOpacity30(true);
     setTimeout(() => {
       setOpacity30(false);
-    }, 3000);
+    }, 2000);
     setTimeout(() => {
       setVisible(false);
-    }, 5000);
+    }, 3000);
   }, []);
 
   return visible ? (

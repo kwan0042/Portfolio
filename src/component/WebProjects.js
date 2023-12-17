@@ -1,10 +1,7 @@
-import Layout from "./Layout";
-import HanderNav from "./HanderNav";
+import HanderNav from "./Main/HanderNav";
 export default function WebProjects() {
   return (
     <div>
-      <Layout />
-
       <HanderNav navSel="web" />
       <h1>dllm</h1>
     </div>
