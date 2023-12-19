@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import { useEffect, useState } from "react";
@@ -6,21 +7,37 @@ import { CSSTransition } from "react-transition-group";
 
 export default function HanderNav(props) {
   const [isSpinActive, SpinActive] = useState(false);
-
+  const [isDark, SetisDark] = useState(false);
   const Spin = classNames("", {
     fadeInNav: isSpinActive,
   });
-
   useEffect(() => {
     SpinActive(true);
   }, []);
+
+  useEffect(() => {
+    if (localStorage.getItem("theme") === "dark") {
+      SetisDark(true);
+    } else {
+      SetisDark(false);
+    }
+  });
+
   return (
     <div className="header">
-      <img
-        src={process.env.PUBLIC_URL + "/img/NameLogo.png"}
-        className="NameLogo"
-        alt=""
-      />
+      {isDark ? (
+        <img
+          src={process.env.PUBLIC_URL + "/img/NameLogo.png"}
+          className="NameLogo"
+          alt=""
+        />
+      ) : (
+        <img
+          src={process.env.PUBLIC_URL + "/img/DKLogo_Drak.png"}
+          className="NameLogo"
+          alt=""
+        />
+      )}
 
       <p className="headerLabel">Designer &amp; Developer</p>
 

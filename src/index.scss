@@ -27,7 +27,7 @@ body {
   color: aliceblue !important;
 }
 
-.mask {
+.light .mask {
   position: fixed;
   z-index: 99;
   left: 0;
@@ -37,9 +37,82 @@ body {
   overflow: hidden;
   pointer-events: none;
 }
+.light .mask-top,
+.light .mask-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(--pad);
+  background-color: white;
+  transition-property: background-color;
+  transition-duration: 0.9s;
+  transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
+  opacity: 0;
+}
+.light .mask-bottom {
+  bottom: 0;
+}
 
-.mask-top,
-.mask-bottom {
+.light .mask-top {
+  top: 0;
+}
+
+.light .frame {
+  position: fixed;
+  z-index: 99;
+  left: var(--pad);
+  right: var(--pad);
+  top: var(--pad);
+  bottom: var(--pad);
+  pointer-events: none;
+}
+
+.light .frame_line-left {
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+}
+
+.light .frame_line-right {
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+}
+
+.light .frame_line-top {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.light .frame_line-bottom {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.light .frame_line {
+  position: absolute;
+  background-color: #000000;
+  opacity: 0.5;
+}
+/////Dark//////
+.dark .mask {
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+.dark .mask-top,
+.dark .mask-bottom {
   position: absolute;
   left: 0;
   width: 100%;
@@ -50,16 +123,15 @@ body {
   transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
   opacity: 0;
 }
-
-.mask-bottom {
+.dark .mask-bottom {
   bottom: 0;
 }
 
-.mask-top {
+.dark .mask-top {
   top: 0;
 }
 
-.frame {
+.dark .frame {
   position: fixed;
   z-index: 99;
   left: var(--pad);
@@ -70,35 +142,35 @@ body {
   pointer-events: none;
 }
 
-.frame_line-left {
+.dark .frame_line-left {
   left: 0;
   top: 0;
   width: 1px;
   height: 100%;
 }
 
-.frame_line-right {
+.dark .frame_line-right {
   right: 0;
   top: 0;
   width: 1px;
   height: 100%;
 }
 
-.frame_line-top {
+.dark .frame_line-top {
   left: 0;
   top: 0;
   width: 100%;
   height: 1px;
 }
 
-.frame_line-bottom {
+.dark .frame_line-bottom {
   left: 0;
   bottom: 0;
   width: 100%;
   height: 1px;
 }
 
-.frame_line {
+.dark .frame_line {
   position: absolute;
   background-color: #fff;
   opacity: 0.5;
@@ -125,7 +197,7 @@ body {
   bottom: var(--pad);
   pointer-events: none;
   overflow: hidden;
-  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #383c4e 100%);
+  background: radial-gradient(ellipse at bottom, #acd1ff 0%, #ffffff 100%);
   transition: 0.3s all;
 }
 
