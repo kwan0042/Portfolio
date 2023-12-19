@@ -1,18 +1,22 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.scss";
 import Start from "./component/Main/Start";
-import Stars from "./component/Main/Stars";
 import Layout from "./component/Main/Layout";
 import Home from "./component/Home";
 import WebProjects from "./component/WebProjects";
 import GraphicProjects from "./component/GraphicProjects";
 import VideoProjects from "./component/VideoProjects";
+import useTheme from "./component/useTheme";
 
 function App() {
+  // const { theme, toggleTheme } = useTheme();
   return (
     <>
+      {/* <button type="button" onClick={toggleTheme}>
+        Switch theme
+      </button> */}
+
       <Start />
-      <Stars />
       <Layout />
       <BrowserRouter>
         <Routes>

@@ -104,7 +104,7 @@ body {
   opacity: 0.5;
 }
 
-.background {
+.background.dark {
   position: fixed;
   z-index: 0;
   left: var(--pad);
@@ -115,6 +115,91 @@ body {
   overflow: hidden;
   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #383c4e 100%);
 }
+
+.background.light {
+  position: fixed;
+  z-index: 0;
+  left: var(--pad);
+  right: var(--pad);
+  top: var(--pad);
+  bottom: var(--pad);
+  pointer-events: none;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #383c4e 100%);
+  transition: 0.3s all;
+}
+
+.sakuras {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  z-index: 1;
+}
+
+.sakura {
+  $star-count: 50;
+  --star-color: #ffb6c1;
+  --fall-duration: 1s;
+  --tail-fade-duration: var(--fall-duration);
+
+  position: absolute;
+  top: var(--top-offset);
+  left: 0;
+  width: 0.8vw;
+  height: 0.4vw;
+  color: var(--star-color);
+  background: linear-gradient(45deg, currentColor, transparent);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px currentColor);
+  transform: translate3d(170em, 0, 0);
+  animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+
+  @include sp-layout {
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+  }
+
+  @for $i from 1 through $star-count {
+    &:nth-child(#{$i}) {
+      --top-offset: #{random_range(0vh, 10000vh) / 100};
+      --fall-duration: #{random_range(6000, 12000s) / 1000};
+      --fall-delay: #{random_range(0, 10000s) / 1000};
+    }
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, currentColor, transparent);
+    border-radius: inherit;
+    animation: blink 2s linear infinite;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes sakura-anim-2 {
+  0% {
+    top: -10%;
+    transform: translateX(0);
+  }
+
+  100% {
+    top: 100%;
+    transform: translateX(-15vw) rotateX(180deg) rotateY(360deg);
+  }
+}
+
+/////////////////////////////////
 
 @function random_range($min, $max) {
   $rand: random();
@@ -367,4 +452,16 @@ body {
 
 .EnterView ._t2 {
   font-weight: 200;
+}
+
+.dark {
+  background: #000;
+  color: #fff;
+  transition: 0.3s all;
+}
+
+.light {
+  background: #fff;
+  color: #000;
+  transition: 0.3s all;
 }
