@@ -35,7 +35,7 @@ export default function Start() {
     <div className={EnterView}>
       <div className={logo_classes}>
         <img
-          src="%PUBLIC_URL%/../img/DKLogo_Drak.png"
+          src="%PUBLIC_URL%/../img/DKLogo_B.png"
           width={"200px"}
           alt="DK Logo"
         />

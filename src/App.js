@@ -12,9 +12,16 @@ function App() {
   const { theme, toggleTheme } = useTheme();
   return (
     <>
-      <button type="button" onClick={toggleTheme}>
-        Switch theme
-      </button>
+      <div className="theme" id="Theme" x-data="">
+        <button
+          className="btn btn-outline-light mb-1"
+          type="button"
+          onClick={toggleTheme}
+        >
+          Dark/Light
+        </button>
+      </div>
+
       <div className={theme}>
         <Start />
         <Layout />

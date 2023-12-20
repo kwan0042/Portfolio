@@ -27,13 +27,13 @@ export default function HanderNav(props) {
     <div className="header">
       {isDark ? (
         <img
-          src={process.env.PUBLIC_URL + "/img/NameLogo.png"}
+          src={process.env.PUBLIC_URL + "/img/NameLogo_W.png"}
           className="NameLogo"
           alt=""
         />
       ) : (
         <img
-          src={process.env.PUBLIC_URL + "/img/DKLogo_Drak.png"}
+          src={process.env.PUBLIC_URL + "/img/NameLogo_B.png"}
           className="NameLogo"
           alt=""
         />

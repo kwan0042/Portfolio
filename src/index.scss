@@ -15,165 +15,211 @@
     @content;
   }
 }
+.theme {
+  position: fixed;
+  z-index: 10;
+  left: calc(var(--pad) - 0.15em);
+  bottom: var(--pad);
+  transform-origin: left bottom;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  mix-blend-mode: difference;
+  display: flex;
+  column-gap: 15px;
+  cursor: pointer;
+}
 
-body {
+// .theme {
+//   display: flex;
+//   column-gap: 3px;
+//   font-weight: 400;
+//   text-transform: uppercase;
+// }
+
+.light {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  width: 100vw;
-  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #383c4e 100%);
   overflow: hidden;
-  color: aliceblue !important;
-}
+  background: #fff;
+  color: #000;
+  transition: 0.3s all;
 
-.light .mask {
-  position: fixed;
-  z-index: 99;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-}
-.light .mask-top,
-.light .mask-bottom {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: var(--pad);
-  background-color: white;
-  transition-property: background-color;
-  transition-duration: 0.9s;
-  transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
-  opacity: 0;
-}
-.light .mask-bottom {
-  bottom: 0;
-}
+  .mask {
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .mask-top,
+  .mask-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: var(--pad);
+    background-color: white;
+    transition-property: background-color;
+    transition-duration: 0.9s;
+    transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
+    opacity: 0.9;
+  }
+  .mask-bottom {
+    bottom: 0;
+  }
 
-.light .mask-top {
-  top: 0;
-}
+  .mask-top {
+    top: 0;
+  }
 
-.light .frame {
-  position: fixed;
-  z-index: 99;
-  left: var(--pad);
-  right: var(--pad);
-  top: var(--pad);
-  bottom: var(--pad);
-  pointer-events: none;
-}
+  .frame {
+    position: fixed;
+    z-index: 99;
+    left: var(--pad);
+    right: var(--pad);
+    top: var(--pad);
+    bottom: var(--pad);
+    pointer-events: none;
+  }
 
-.light .frame_line-left {
-  left: 0;
-  top: 0;
-  width: 1px;
-  height: 100%;
-}
+  .frame_line-left {
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+  }
 
-.light .frame_line-right {
-  right: 0;
-  top: 0;
-  width: 1px;
-  height: 100%;
-}
+  .frame_line-right {
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+  }
 
-.light .frame_line-top {
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 1px;
-}
+  .frame_line-top {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+  }
 
-.light .frame_line-bottom {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-}
+  .frame_line-bottom {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+  }
 
-.light .frame_line {
-  position: absolute;
-  background-color: #000000;
-  opacity: 0.5;
+  .frame_line {
+    position: absolute;
+    background-color: #000000;
+    opacity: 0.5;
+  }
+
+  .nav-underline {
+    --bs-nav-underline-gap: 0rem !important;
+    --bs-nav-link-color: rgb(0, 0, 0) !important;
+    --bs-nav-underline-link-active-color: rgb(0, 0, 0) !important;
+  }
 }
 /////Dark//////
-.dark .mask {
-  position: fixed;
-  z-index: 99;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+.dark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   overflow: hidden;
-  pointer-events: none;
-}
-.dark .mask-top,
-.dark .mask-bottom {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: var(--pad);
-  background-color: var(--c-bg);
-  transition-property: background-color;
-  transition-duration: 0.9s;
-  transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
-  opacity: 0;
-}
-.dark .mask-bottom {
-  bottom: 0;
-}
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #383c4e 100%);
+  color: #fff;
+  transition: 0.3s all;
 
-.dark .mask-top {
-  top: 0;
-}
+  .mask {
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .mask-top,
+  .mask-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: var(--pad);
+    background-color: var(--c-bg);
+    transition-property: background-color;
+    transition-duration: 0.9s;
+    transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
+    opacity: 0;
+  }
+  .mask-bottom {
+    bottom: 0;
+  }
 
-.dark .frame {
-  position: fixed;
-  z-index: 99;
-  left: var(--pad);
-  right: var(--pad);
-  top: var(--pad);
-  bottom: var(--pad);
-  mix-blend-mode: difference;
-  pointer-events: none;
-}
+  .mask-top {
+    top: 0;
+  }
 
-.dark .frame_line-left {
-  left: 0;
-  top: 0;
-  width: 1px;
-  height: 100%;
-}
+  .frame {
+    position: fixed;
+    z-index: 99;
+    left: var(--pad);
+    right: var(--pad);
+    top: var(--pad);
+    bottom: var(--pad);
+    mix-blend-mode: difference;
+    pointer-events: none;
+  }
 
-.dark .frame_line-right {
-  right: 0;
-  top: 0;
-  width: 1px;
-  height: 100%;
-}
+  .frame_line-left {
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+  }
 
-.dark .frame_line-top {
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 1px;
-}
+  .frame_line-right {
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+  }
 
-.dark .frame_line-bottom {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-}
+  .frame_line-top {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+  }
 
-.dark .frame_line {
-  position: absolute;
-  background-color: #fff;
-  opacity: 0.5;
+  .frame_line-bottom {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+  }
+
+  .frame_line {
+    position: absolute;
+    background-color: #fff;
+    opacity: 0.5;
+  }
+  .nav-underline {
+    --bs-nav-underline-gap: 0rem !important;
+    --bs-nav-link-color: white !important;
+    --bs-nav-underline-link-active-color: white !important;
+  }
+
+  .nav {
+    --bs-nav-link-hover-color: white !important;
+  }
 }
 
 .background.dark {
@@ -445,16 +491,6 @@ body {
   margin-top: 25px;
 }
 
-.nav-underline {
-  --bs-nav-underline-gap: 0rem !important;
-  --bs-nav-link-color: white !important;
-  --bs-nav-underline-link-active-color: white !important;
-}
-
-.nav {
-  --bs-nav-link-hover-color: white !important;
-}
-
 .headerLabel {
   font-family: "Neue Montreal Mono";
   font-size: 20px;
@@ -524,16 +560,4 @@ body {
 
 .EnterView ._t2 {
   font-weight: 200;
-}
-
-.dark {
-  background: #000;
-  color: #fff;
-  transition: 0.3s all;
-}
-
-.light {
-  background: #fff;
-  color: #000;
-  transition: 0.3s all;
 }
