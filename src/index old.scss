@@ -1,0 +1,406 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-bg: hsl(0, 0%, 5%);
+    --c-text: hsl(0, 0%, 95%);
+  }
+}
+
+:root {
+  --c-bg: black;
+  --pad: max(20px, 4vmin);
+  --c-text: hsl(0, 0%, 10%);
+}
+
+@mixin sp-layout {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--c-bg) !important;
+  font-family: "Neue Montreal";
+  font-size: 14px;
+  font-feature-settings: "palt";
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark {
+  color: #fff;
+  // transition: 0.3s all;
+  .mask {
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    background-color: wheat;
+  }
+  .mask-top,
+  .mask-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: var(--pad);
+    background-color: wheat;
+    transition-property: background-color;
+    transition-duration: 0.9s;
+    transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
+    opacity: 1;
+  }
+  .mask-bottom {
+    bottom: 0;
+  }
+
+  .mask-top {
+    top: 0;
+  }
+
+  .frame {
+    position: fixed;
+    z-index: 99;
+    left: var(--pad);
+    right: var(--pad);
+    top: var(--pad);
+    bottom: var(--pad);
+    mix-blend-mode: difference;
+    pointer-events: none;
+  }
+
+  .frame_line-left {
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+  }
+
+  .frame_line-right {
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+  }
+
+  .frame_line-top {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+  }
+
+  .frame_line-bottom {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+  }
+
+  .frame_line {
+    position: absolute;
+    background-color: #fff;
+    opacity: 0.5;
+  }
+  .nav-underline {
+    --bs-nav-underline-gap: 0rem !important;
+    --bs-nav-link-color: white !important;
+    --bs-nav-underline-link-active-color: white !important;
+  }
+
+  .nav {
+    --bs-nav-link-hover-color: white !important;
+    --bs-nav-link-padding-y: 0.2rem;
+  }
+}
+
+.background.dark {
+  position: fixed;
+  z-index: 0;
+  left: var(--pad);
+  right: var(--pad);
+  top: var(--pad);
+  bottom: var(--pad);
+  pointer-events: none;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #383c4e 100%);
+}
+
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+.stars {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  transform: rotate(-45deg);
+  z-index: 1;
+}
+
+.star {
+  $star-count: 50;
+  --star-color: white;
+  --star-tail-length: 6em;
+  --star-tail-height: 2px;
+  --star-width: calc(var(--star-tail-length) / 6);
+  --fall-duration: 1s;
+  --tail-fade-duration: var(--fall-duration);
+
+  position: absolute;
+  top: var(--top-offset);
+  left: 0;
+  width: var(--star-tail-length);
+  height: var(--star-tail-height);
+  color: var(--star-color);
+  background: linear-gradient(45deg, currentColor, transparent);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px currentColor);
+  transform: translate3d(170em, 0, 0);
+  animation: fall var(--fall-duration) var(--fall-delay) linear infinite,
+    tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+
+  @include sp-layout {
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+  }
+
+  @for $i from 1 through $star-count {
+    &:nth-child(#{$i}) {
+      --star-tail-length: #{random_range(500em, 750em) / 100};
+      --top-offset: #{random_range(0vh, 10000vh) / 100};
+      --fall-duration: #{random_range(6000, 12000s) / 1000};
+      --fall-delay: #{random_range(0, 10000s) / 1000};
+    }
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: calc(var(--star-width) / -2);
+    width: var(--star-width);
+    height: 100%;
+    background: linear-gradient(45deg, transparent, currentColor, transparent);
+    border-radius: inherit;
+    animation: blink 2s linear infinite;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(-30em, 0, 0);
+  }
+}
+
+@keyframes tail-fade {
+  0%,
+  50% {
+    width: var(--star-tail-length);
+    opacity: 1;
+  }
+
+  70%,
+  80% {
+    width: 0;
+    opacity: 0.4;
+  }
+
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.fadeInNav {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  font-weight: 200;
+  src: url("../public/font/PPNeueMontreal-Thin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  font-weight: 400;
+  src: url("../public/font/PPNeueMontreal-Book.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  font-weight: 600;
+  src: url("../public/font/PPNeueMontreal-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Neue Montreal Mono";
+  font-weight: 200;
+  src: url("../public/font/PPNeueMontreal-Thin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Neue Montreal Mono";
+  font-weight: 400;
+  src: url("../public/font/PPNeueMontreal-Book.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Neue Montreal Mono";
+  font-weight: 600;
+  src: url("../public/font/PPNeueMontreal-SemiBold.woff2") format("woff2");
+}
+
+.header {
+  position: fixed;
+  z-index: 3;
+  left: calc(var(--pad) * 2);
+  top: calc(var(--pad) * 2);
+}
+
+.NameLogo {
+  height: 150px;
+}
+
+.headerNav {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-top: 25px;
+}
+
+.headerLabel {
+  font-family: "Neue Montreal Mono";
+  font-size: 20px;
+  font-feature-settings: "palt";
+}
+
+.EnterView {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  will-change: opacity;
+  background-color: white;
+  color: var(--c-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5em;
+  font-size: 30px;
+  flex-direction: column;
+}
+
+.EnterView ._t1 {
+  font-weight: 400;
+}
+
+._l1 {
+  opacity: 0;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+._t1 {
+  opacity: 0;
+}
+._t2 {
+  opacity: 0;
+}
+
+.opacity_1 {
+  opacity: 1;
+  transition: opacity 1s 0.5s;
+}
+.opacity_2 {
+  opacity: 1;
+  transition: opacity 1s 1s;
+}
+.opacity_3 {
+  opacity: 0;
+  transition: opacity 0.2s 0.2s;
+}
+.opacity_4 {
+  opacity: 0;
+  transition: opacity 0.5s 0.4s;
+}
+
+.EnterView ._t2 {
+  font-weight: 200;
+}
+
+.content {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  mix-blend-mode: difference;
+}
+
+.contact_text .jp {
+  font-family: "Neue Montreal", "Hiragino Sans", Meiryo, sans-serif;
+}
+.content_inner {
+  position: relative;
+  min-height: 100%;
+}
+
+.home {
+  position: absolute;
+  right: calc(var(--pad) * 2);
+  bottom: calc(var(--pad) * 2);
+  white-space: nowrap;
+}
+
+.home_aboutme span {
+  display: block;
+}
+
+.nav-underline .nav-link {
+  width: fit-content;
+}
