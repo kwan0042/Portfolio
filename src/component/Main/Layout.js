@@ -1,5 +1,5 @@
 // import Stars from "./Stars";
-// import Sakura from "./Sakura";
+// import Saku from "./Saku";
 import { useEffect, useState } from "react";
 
 export default function Layout() {
@@ -26,7 +26,7 @@ export default function Layout() {
         <div className="frame_line frame_line-bottom"></div>
       </div>
 
-      {/* {isDark ? <Stars /> : <Sakura />} */}
+      {/* {isDark ? <Stars /> : <Saku />} */}
     </>
   );
 }

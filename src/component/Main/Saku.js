@@ -1,4 +1,4 @@
-export default function Sakura() {
+export default function Saku() {
   return (
     <div className="background light">
       <div className="sakuras">
