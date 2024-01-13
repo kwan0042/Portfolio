@@ -1,4 +1,4 @@
-import HanderNav from "../HanderNav";
+// import HanderNav from "../HanderNav";
 import SwiperCover from "./SwiperCover";
 export default function Home() {
   return (
