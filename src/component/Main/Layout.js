@@ -10,7 +10,7 @@ export default function Layout() {
     } else {
       SetisDark(false);
     }
-  }, []);
+  });
 
   return (
     <>
