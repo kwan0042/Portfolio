@@ -1,6 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-// import Stars from "./Stars";
-// import Sakura from "./Sakura";
+import Stars from "./Stars";
+import Sakura from "./Sakura";
 import { useEffect, useState } from "react";
 
 export default function Layout() {
@@ -27,7 +26,7 @@ export default function Layout() {
         <div className="frame_line frame_line-bottom"></div>
       </div>
 
-      {/* {isDark ? <Stars /> : <Sakura />} */}
+      {isDark ? <Stars /> : <Sakura />}
     </>
   );
 }
