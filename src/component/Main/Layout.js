@@ -1,3 +1,5 @@
+import Stars from "./Stars";
+import Sakura from "./Sakura";
 import { useEffect, useState } from "react";
 
 export default function Layout() {
@@ -8,7 +10,7 @@ export default function Layout() {
     } else {
       SetisDark(false);
     }
-  });
+  }, []);
 
   return (
     <>
@@ -23,6 +25,8 @@ export default function Layout() {
         <div className="frame_line frame_line-top"></div>
         <div className="frame_line frame_line-bottom"></div>
       </div>
+
+      {isDark ? <Stars /> : <Sakura />}
     </>
   );
 }
