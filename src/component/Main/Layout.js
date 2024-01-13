@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import Stars from "./Stars";
-import Sakura from "./Sakura";
+// import Stars from "./Stars";
+// import Sakura from "./Sakura";
 import { useEffect, useState } from "react";
 
 export default function Layout() {
