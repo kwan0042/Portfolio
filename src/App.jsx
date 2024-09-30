@@ -3,6 +3,8 @@ import Start from "./component/Start";
 import Navbar from "./component/Navbar";
 import About from "./component/About";
 import TechLang from "./component/TechLang";
+import Experience from "./component/Experience";
+import Projects from "./component/Projects";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Home />
         <About />
         <TechLang />
+        <Experience />
+        <Projects />
       </div>
     </div>
   );
