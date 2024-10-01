@@ -69,7 +69,7 @@ export const Experience_List = [
     ],
   },
 ];
-export const Projects_list = [
+export const Projects_List_Web = [
   {
     title: "R.I.S.E. Academy - Learning Management System (LMS)",
     image: "project1",
@@ -83,7 +83,7 @@ export const Projects_list = [
       "RESTful API",
       "Figma",
     ],
-    url: "https://rise-academy.com",
+    url: "https://riseacademy.ca/",
   },
   {
     title: "Online TV Merchant Dynamic Website",
@@ -98,7 +98,7 @@ export const Projects_list = [
       "LINQ",
       "SQL Server",
     ],
-    url: "https://tvmerchant.com",
+    url: "https://github.com/kwan0042/HKTV_SHOP",
   },
   {
     title: "Online Bookstore Static Website",
@@ -106,6 +106,14 @@ export const Projects_list = [
     description:
       "Created a responsive bookstore web application using HTML, SCSS, Bootstrap, and React.js. Integrated shopping cart functionality and optimized the app for desktop, tablet, and mobile devices using media queries and grid layouts.",
     technologies: ["HTML", "SCSS", "Bootstrap", "React.js", "JavaScript"],
-    url: "https://bookstore.com",
+    url: "https://github.com/kwan0042/Online_BookShop",
+  },
+  {
+    title: "Online Bookstore Static Website",
+    image: "project3",
+    description:
+      "Created a responsive bookstore web application using HTML, SCSS, Bootstrap, and React.js. Integrated shopping cart functionality and optimized the app for desktop, tablet, and mobile devices using media queries and grid layouts.",
+    technologies: ["HTML", "SCSS", "Bootstrap", "React.js", "JavaScript"],
+    url: "https://github.com/kwan0042/Online_BookShop",
   },
 ];

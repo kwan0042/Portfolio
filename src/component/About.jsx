@@ -1,4 +1,3 @@
-import aboutImg from "../assets/about.jpg";
 import { About_Context } from "../content";
 
 function About() {
@@ -8,11 +7,17 @@ function About() {
       <div className="flex flex-wrap">
         <div className="w-full lg:w-1/2 lg:p-8">
           <div className="flex items-cneter justify-center">
-            <img
-              className="h-[300px] w-full rounded-2xl object-cover "
-              src={aboutImg}
-              alt="about"
-            />
+            <div className="h-[300px] w-full rounded-2xl object-cover ">
+              <iframe
+                className="w-full aspect-video rounded-2xl"
+                src="https://www.youtube.com/embed/vKAMaju1aNA?si=CQzN_i95aZHJ9IDw"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </div>
         <div className="w-full lg:w-1/2">
