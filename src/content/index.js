@@ -1,3 +1,7 @@
+import project1 from "../assets/project_pic/rise_1.png";
+import project2 from "../assets/project_pic/tv_1.jpg";
+import project3 from "../assets/project_pic/baker_1.jpg";
+
 export const Description_Context = `Hello, I’m Daniel Kwan, a web developer and digital marketer based in Toronto. I specialize in building dynamic, responsive websites with a focus on user-centric design and performance optimization. Utilizing technologies like React.js, ASP.NET Core (MVC), PHP, and WordPress, I ensure seamless functionality and a smooth user experience. My expertise spans SEO, analytics, and A/B testing to drive measurable improvements in website performance. In the realm of design, I create visually compelling digital and print assets, from social media graphics to marketing materials, using Adobe Suite and Figma. My approach integrates both technical precision and creative design to deliver tailored solutions that elevate brand identity and user engagement.`;
 export const About_Context = `Born and raised in the vibrant city of Hong Kong, I’ve always been driven by curiosity and creativity. Though I initially studied advertising and marketing management, my passion for design, filmmaking, and programming took over. I taught myself these skills and turned them into a career, helping businesses bring their creative and digital visions to life. Eventually, I moved to Toronto to start a new chapter and immerse myself in the tech world. When I’m not coding or designing, I’m reflecting on my travels, editing footage, and planning my next adventure, always seeking new ways to evolve my craft.`;
 export const Experience_List = [
@@ -72,7 +76,7 @@ export const Experience_List = [
 export const Projects_List_Web = [
   {
     title: "R.I.S.E. Academy - Learning Management System (LMS)",
-    image: "project1",
+    image: project1,
     description:
       "Collaboratively built a robust Learning Management System (LMS) using PHP, Composer, Twig, and Slim framework. Integrated front-end elements from Figma prototypes and implemented CRUD operations for teacher and student dashboards. Worked closely with the back-end team to optimize the database and employed RESTful API to fetch real-time data.",
     technologies: [
@@ -87,7 +91,7 @@ export const Projects_List_Web = [
   },
   {
     title: "Online TV Merchant Dynamic Website",
-    image: "project2",
+    image: project2,
     description:
       "Developed an online TV merchant application using ASP.NET, MVC, and Entity Framework Core. Implemented a shopping cart, real-time CRUD operations, and optimized the web design for tablet devices using Bootstrap.",
     technologies: [
@@ -101,8 +105,8 @@ export const Projects_List_Web = [
     url: "https://github.com/kwan0042/HKTV_SHOP",
   },
   {
-    title: "Online Bookstore Static Website",
-    image: "project3",
+    title: "Bakery Dynamic Website",
+    image: project3,
     description:
       "Created a responsive bookstore web application using HTML, SCSS, Bootstrap, and React.js. Integrated shopping cart functionality and optimized the app for desktop, tablet, and mobile devices using media queries and grid layouts.",
     technologies: ["HTML", "SCSS", "Bootstrap", "React.js", "JavaScript"],
@@ -110,7 +114,7 @@ export const Projects_List_Web = [
   },
   {
     title: "Online Bookstore Static Website",
-    image: "project3",
+    image: project3,
     description:
       "Created a responsive bookstore web application using HTML, SCSS, Bootstrap, and React.js. Integrated shopping cart functionality and optimized the app for desktop, tablet, and mobile devices using media queries and grid layouts.",
     technologies: ["HTML", "SCSS", "Bootstrap", "React.js", "JavaScript"],

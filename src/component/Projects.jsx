@@ -1,4 +1,5 @@
 import { Projects_List_Web } from "../content";
+import { motion } from "framer-motion";
 
 function Projects() {
   return (
@@ -6,11 +7,18 @@ function Projects() {
       <h1 className="my-20 text-center text-4xl">Projects</h1>
       <div>
         {Projects_List_Web.map((pjw, index) => (
-          <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
-            <div className="w-full lg:w-1/4">
-              <img src={pjw.image} alt={pjw.title} className=",b-6 rounded" />
+          <div key={index} className="mb-8 flex flex-wrap lg:justify-center ">
+            <div className="w-full lg:w-1/4 pr-5">
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                src={pjw.image}
+                width={250}
+                height={250}
+                alt={pjw.title}
+                className="mb-6 rounded"
+              />
             </div>
-            <div className="w-full max-w-xl lg:w-3/4">
+            <div className="w-full max-w-xl  lg:w-3/4">
               <h6 className="mb-2 font-semibold">{pjw.title}</h6>
               <p className="mb-4 text-neutral-400 text-justify">
                 {pjw.description}

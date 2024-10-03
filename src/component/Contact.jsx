@@ -1,5 +1,5 @@
 import { Contact_Details } from "../content";
-
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 function Contact() {
   return (
     <div className="border-b border-neutral-900 pb-20">
@@ -10,6 +10,17 @@ function Contact() {
         <a className="border-b" href="#">
           {Contact_Details.email}
         </a>
+        <div className="m-8 flex items-center justify-center gap-4 text-2xl">
+          <a href="https://www.linkedin.com/in/danielxkwan/">
+            <FaLinkedin />
+          </a>
+          <a href="https://github.com/kwan0042">
+            <FaGithub />
+          </a>
+          <a href="https://www.instagram.com/daniel_kwan">
+            <FaInstagram />
+          </a>
+        </div>
       </div>
     </div>
   );

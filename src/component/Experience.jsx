@@ -1,4 +1,5 @@
 import { Experience_List } from "../content";
+import resume from "../assets/resume.pdf";
 
 function Experience() {
   return (
@@ -10,10 +11,12 @@ function Experience() {
             <div className="w-full lg:w-1/4">
               <p className="mb-2 text-sm text-neutral-400">{exp.year}</p>
             </div>
-            <div className="w-full max-w-xl flex flex-wrap lg:w-3/4">
+            <div className="w-full max-w-xl flex flex-wrap lg:w-3/4 ">
               <h6 className="mb-2 font-semibold">
                 {exp.role} -{" "}
-                <span className="text-sm text-purple-100">{exp.company}</span>
+                <span className="text-sm text-purple-100 inline-block align-middle">
+                  {exp.company}
+                </span>
               </h6>
               <p className="mb-4 text-neutral-400 text-justify">
                 {exp.description}
@@ -30,8 +33,11 @@ function Experience() {
           </div>
         ))}
         <div className="mb-8 flex flex-wrap lg:justify-center">
-          <div className="w-full lg:w-3/4">
-            <a className="inline-flex items-baseline font-bold leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 font-semibold text-slate-200 group/link text-base">
+          <div className="w-full lg:w-1/4">
+            <a
+              className="inline-flex items-baseline font-bold leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 font-semibold text-slate-200 group/link text-base"
+              href={resume}
+            >
               View Full Resume
               <svg
                 width="100%"
@@ -51,6 +57,7 @@ function Experience() {
               </svg>
             </a>
           </div>
+          <div className="w-full max-w-xl flex flex-wrap lg:w-3/4 " />
         </div>
       </div>
     </div>

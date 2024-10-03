@@ -15,7 +15,7 @@
   overflow: hidden;
   will-change: opacity;
   background-color: white;
-  color: var(--c-text);
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
