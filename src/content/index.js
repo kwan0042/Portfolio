@@ -117,3 +117,8 @@ export const Projects_List_Web = [
     url: "https://github.com/kwan0042/Online_BookShop",
   },
 ];
+
+export const Contact_Details = {
+  phoneNum: "437-340-9625",
+  email: "danielkwan6d16@gmail.com",
+};

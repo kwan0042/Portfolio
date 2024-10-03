@@ -5,6 +5,7 @@ import About from "./component/About";
 import TechLang from "./component/TechLang";
 import Experience from "./component/Experience";
 import Projects from "./component/Projects";
+import Contact from "./component/Contact";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <TechLang />
         <Experience />
         <Projects />
+        <Contact />
       </div>
     </div>
   );
