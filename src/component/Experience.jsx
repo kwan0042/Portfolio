@@ -3,7 +3,7 @@ import resume from "../assets/resume.pdf";
 
 function Experience() {
   return (
-    <div className="border-b border-neutral-900 pb-4">
+    <div className="border-b border-neutral-800 pb-4">
       <h1 className="my-20 text-center text-4xl">Experience</h1>
       <div>
         {Experience_List.map((exp, index) => (
@@ -35,7 +35,7 @@ function Experience() {
         <div className="mb-8 flex flex-wrap lg:justify-center">
           <div className="w-full lg:w-1/4">
             <a
-              className="inline-flex items-baseline font-bold leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 font-semibold text-slate-200 group/link text-base"
+              className="inline-flex items-baseline  leading-tight  hover:text-teal-300 focus-visible:text-teal-300 font-semibold text-slate-200 group/link text-base"
               href={resume}
             >
               View Full Resume

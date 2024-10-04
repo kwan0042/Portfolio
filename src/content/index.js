@@ -1,6 +1,13 @@
-import project1 from "../assets/project_pic/rise_1.png";
-import project2 from "../assets/project_pic/tv_1.jpg";
-import project3 from "../assets/project_pic/baker_1.jpg";
+import rise_1 from "../assets/project_pic/rise_1.png";
+import tv_1 from "../assets/project_pic/tv_1.jpg";
+import baker_1 from "../assets/project_pic/baker_1.png";
+import book_1 from "../assets/project_pic/book_1.png";
+import graPortfolio_1 from "../assets/project_pic/graPortfolio_1.png";
+import pdo_1 from "../assets/project_pic/pdo_1.png";
+import camrt_1 from "../assets/project_pic/camrt_1.png";
+import imageofcare_1 from "../assets/project_pic/imageofcare_1.png";
+import edasummit_1 from "../assets/project_pic/edasummit_1.png";
+import solace_1 from "../assets/project_pic/solace_1.png";
 
 export const Description_Context = `Hello, I’m Daniel Kwan, a web developer and digital marketer based in Toronto. I specialize in building dynamic, responsive websites with a focus on user-centric design and performance optimization. Utilizing technologies like React.js, ASP.NET Core (MVC), PHP, and WordPress, I ensure seamless functionality and a smooth user experience. My expertise spans SEO, analytics, and A/B testing to drive measurable improvements in website performance. In the realm of design, I create visually compelling digital and print assets, from social media graphics to marketing materials, using Adobe Suite and Figma. My approach integrates both technical precision and creative design to deliver tailored solutions that elevate brand identity and user engagement.`;
 export const About_Context = `Born and raised in the vibrant city of Hong Kong, I’ve always been driven by curiosity and creativity. Though I initially studied advertising and marketing management, my passion for design, filmmaking, and programming took over. I taught myself these skills and turned them into a career, helping businesses bring their creative and digital visions to life. Eventually, I moved to Toronto to start a new chapter and immerse myself in the tech world. When I’m not coding or designing, I’m reflecting on my travels, editing footage, and planning my next adventure, always seeking new ways to evolve my craft.`;
@@ -32,7 +39,7 @@ export const Experience_List = [
     technologies: [
       "React.js",
       "JavaScript",
-
+      "Yoast",
       "Google Analytics",
       "A/B  Testing",
       "SEMrush",
@@ -75,10 +82,69 @@ export const Experience_List = [
 ];
 export const Projects_List_Web = [
   {
-    title: "R.I.S.E. Academy - Learning Management System (LMS)",
-    image: project1,
+    title: "Solace Website Enhancements",
+    image: solace_1,
     description:
-      "Collaboratively built a robust Learning Management System (LMS) using PHP, Composer, Twig, and Slim framework. Integrated front-end elements from Figma prototypes and implemented CRUD operations for teacher and student dashboards. Worked closely with the back-end team to optimize the database and employed RESTful API to fetch real-time data.",
+      "Standardized UX elements such as cards, buttons, and forms using JavaScript and React.js on Gatsby Cloud. Collaboratively maintained and fixed bugs on WordPress websites with overseas colleagues. Examined loading speed analytics and SEO performance using Google Analytics and Hotjar, identifying critical improvement areas and providing actionable insights for the marketing team to implement.",
+    technologies: [
+      "React",
+      "Gatsby",
+      "JavaScript",
+      "Hotjar",
+      "SEMrush",
+      "Google Tag Manager",
+      "WordPress",
+      "Yoast SEO",
+    ],
+    url: "https://solace.com/",
+    projectType: "web",
+  },
+  {
+    title: "EDA Summit Website Enhancements",
+    image: edasummit_1,
+    description:
+      "Collaborated with Solace to enhance the EDA Summit website by improving forms and buttons and suggesting UI ideas to ensure brand consistency. Utilized Figma for design concepts and implemented changes using HTML, CSS, WordPress, and Yoast SEO.",
+    technologies: ["Figma", "HTML", "CSS", "WordPress", "Yoast SEO"],
+    url: "https://edasummit.com/",
+    projectType: "web",
+  },
+  {
+    title: "Image of Care Campaign Website",
+    image: imageofcare_1,
+    description:
+      "Led the migration of the Image of Care website to a new WordPress theme for rebranding purposes in collaboration with the Canadian Association of Medical Radiation Technologists (CAMRT). Implemented custom front-end enhancements using JavaScript and CSS. Utilized Google Analytics to track user interactions and improved accessibility by aligning with WCAG 2.1 standards, enhancing the site's usability and user experience.",
+    technologies: [
+      "WordPress",
+      "JavaScript",
+      "CSS",
+      "Google Analytics",
+      "WCAG 2.1",
+      "Figma",
+      "Adobe Illustrator",
+    ],
+    url: "https://www.imageofcare.ca/",
+    projectType: "web",
+  },
+  {
+    title: "CAMRT Website Enhancements",
+    image: camrt_1,
+    description:
+      "Collaborated with the Canadian Association of Medical Radiation Technologists (CAMRT) to enhance their official website. Responsibilities included checking and fixing broken links, resolving layout bugs, and providing redesign suggestions. Utilized JavaScript and CSS for front-end improvements. Integrated and customized plugins to enhance site functionality, including Pixelyoursite for SEO management and WooCommerce for additional features. Employed Google Analytics to track user interactions and improve user experience.",
+    technologies: [
+      "WordPress",
+      "JavaScript",
+      "CSS",
+      "Pixelyoursite",
+      "Google Analytics",
+    ],
+    url: "https://www.camrt.ca/",
+    projectType: "web",
+  },
+  {
+    title: "R.I.S.E. Academy - Learning Management System (LMS)",
+    image: rise_1,
+    description:
+      "Robust LMS web app built with PHP, Composer, Twig, and Slim framework. Integrated Figma prototypes into the front end and implemented real-time CRUD operations for teacher and student dashboards. Optimized database schema and utilized RESTful API for seamless data fetching.",
     technologies: [
       "PHP",
       "Composer",
@@ -88,12 +154,13 @@ export const Projects_List_Web = [
       "Figma",
     ],
     url: "https://riseacademy.ca/",
+    projectType: "web",
   },
   {
     title: "Online TV Merchant Dynamic Website",
-    image: project2,
+    image: tv_1,
     description:
-      "Developed an online TV merchant application using ASP.NET, MVC, and Entity Framework Core. Implemented a shopping cart, real-time CRUD operations, and optimized the web design for tablet devices using Bootstrap.",
+      "Dynamic web application for purchasing TVs online. Developed with ASP.NET MVC and Entity Framework Core. Features shopping cart functionality, real-time CRUD operations, and a responsive design optimized for tablets.",
     technologies: [
       "ASP.NET",
       "MVC",
@@ -102,23 +169,44 @@ export const Projects_List_Web = [
       "LINQ",
       "SQL Server",
     ],
-    url: "https://github.com/kwan0042/HKTV_SHOP",
+    url: "https://github.com/kwan0042/Online_BookShop",
+    projectType: "web",
   },
   {
-    title: "Bakery Dynamic Website",
-    image: project3,
+    title: "SQL Injection Protection Demo",
+    image: pdo_1,
     description:
-      "Created a responsive bookstore web application using HTML, SCSS, Bootstrap, and React.js. Integrated shopping cart functionality and optimized the app for desktop, tablet, and mobile devices using media queries and grid layouts.",
-    technologies: ["HTML", "SCSS", "Bootstrap", "React.js", "JavaScript"],
-    url: "https://github.com/kwan0042/Online_BookShop",
+      "Developed a demonstration project to illustrate how to use PHP Data Objects (PDO) to protect against SQL injection attacks. The project compares a vulnerable site with a secure site, highlighting the importance of prepared statements and secure coding practices in PHP applications.",
+    technologies: ["PHP", "PDO", "mySQL", "Ampps", "Apache NetBeans"],
+    url: "https://github.com/kwan0042/PHP_SQL_Inj_Solution_Demo/",
+    projectType: "web",
   },
   {
     title: "Online Bookstore Static Website",
-    image: project3,
+    image: book_1,
     description:
-      "Created a responsive bookstore web application using HTML, SCSS, Bootstrap, and React.js. Integrated shopping cart functionality and optimized the app for desktop, tablet, and mobile devices using media queries and grid layouts.",
-    technologies: ["HTML", "SCSS", "Bootstrap", "React.js", "JavaScript"],
+      "Responsive web app for browsing and purchasing books. Built with HTML, SCSS, Bootstrap, and React.js. Includes shopping cart functionality and is optimized for desktop, tablet, and mobile devices using media queries and grid layouts.",
+    technologies: ["HTML", "SCSS", "Bootstrap", "React.js"],
     url: "https://github.com/kwan0042/Online_BookShop",
+    projectType: "web",
+  },
+  {
+    title: "Good HOPE Bakery Website",
+    image: baker_1,
+    description:
+      "Designed and developed a comprehensive bakery website featuring recipe listings, a fully functional shopping cart, and interactive contact forms. Leveraged HTML, CSS, JavaScript for front-end development and PHP with MySQL for back-end processing. The platform showcases bakery products and enables seamless online ordering, focusing on user-friendly interfaces and enhanced customer experience.",
+    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+    url: "https://github.com/kwan0042/Good_HOPE_Bakery",
+    projectType: "web",
+  },
+  {
+    title: "Graphic Design Portfolio Website",
+    image: graPortfolio_1,
+    description:
+      "Developed a personal portfolio website using Weebly to showcase graphic design and video projects. The site features a collection of works created with Adobe Illustrator, Photoshop, and After Effects, providing an interactive platform for potential clients and collaborators.",
+    technologies: ["Weebly", "Figma", "Adobe Illustrator", "Adobe Photoshop"],
+    url: "https://danielxkwan.weebly.com",
+    projectType: "web",
   },
 ];
 
