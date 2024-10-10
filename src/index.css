@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 /* Enter Animate */
-.EnterView {
+/* .EnterView {
   position: fixed;
   z-index: 9999;
   left: 0;
@@ -73,4 +73,4 @@
 #root {
   font-family: "Poppins", sans-serif;
 
-}
+} */

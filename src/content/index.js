@@ -9,8 +9,7 @@ import imageofcare_1 from "../assets/project_pic/imageofcare_1.png";
 import edasummit_1 from "../assets/project_pic/edasummit_1.png";
 import solace_1 from "../assets/project_pic/solace_1.png";
 
-export const Description_Context = `Hello, I’m Daniel Kwan, a web developer and digital marketer based in Toronto. I specialize in building dynamic, responsive websites with a focus on user-centric design and performance optimization. Utilizing technologies like React.js, ASP.NET Core (MVC), PHP, and WordPress, I ensure seamless functionality and a smooth user experience. My expertise spans SEO, analytics, and A/B testing to drive measurable improvements in website performance. In the realm of design, I create visually compelling digital and print assets, from social media graphics to marketing materials, using Adobe Suite and Figma. My approach integrates both technical precision and creative design to deliver tailored solutions that elevate brand identity and user engagement.`;
-export const About_Context = `Born and raised in the vibrant city of Hong Kong, I’ve always been driven by curiosity and creativity. Though I initially studied advertising and marketing management, my passion for design, filmmaking, and programming took over. I taught myself these skills and turned them into a career, helping businesses bring their creative and digital visions to life. Eventually, I moved to Toronto to start a new chapter and immerse myself in the tech world. When I’m not coding or designing, I’m reflecting on my travels, editing footage, and planning my next adventure, always seeking new ways to evolve my craft.`;
+export const About_Context = `Born and raised in Hong Kong, I’ve always had a curious, creative mindset. Although my background began in marketing and management, I taught myself web development, design, and filmmaking, eventually turning these skills into a fulfilling career. Now based in Toronto, I continue to grow and explore new ideas, whether that’s through coding, editing travel footage, or planning my next big adventure.`;
 export const Experience_List = [
   {
     year: "Feb 2024 - May 2024",
@@ -207,6 +206,16 @@ export const Projects_List_Web = [
     technologies: ["Weebly", "Figma", "Adobe Illustrator", "Adobe Photoshop"],
     url: "https://danielxkwan.weebly.com",
     projectType: "web",
+  },
+  {
+    title: "Design1",
+    slug: "Design1",
+    date: "2024-04-13",
+    image: solace_1,
+    type: "Event",
+    description: "",
+    client: "Hong Kong Red Cross",
+    projectType: "graphic",
   },
 ];
 

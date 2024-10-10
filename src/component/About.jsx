@@ -1,5 +1,6 @@
 import { About_Context } from "../content";
 import { motion } from "framer-motion";
+import FlightAnimation from "./FlightAnimation";
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
   visible: {
@@ -13,7 +14,7 @@ function About() {
   return (
     <div className="border-b border-neutral-900 pb-4">
       <motion.h1
-        variants={container(2.5)}
+        variants={container(1)}
         initial="hidden"
         animate="visible"
         className="my-20 text-center text-4xl"
@@ -22,7 +23,7 @@ function About() {
       </motion.h1>
       <div className="flex flex-wrap items-center">
         <motion.div
-          variants={container(2.5)}
+          variants={container(1.2)}
           initial="hidden"
           animate="visible"
           className="w-full lg:w-1/2 lg:p-8"
@@ -47,7 +48,7 @@ function About() {
           </motion.div>
         </motion.div>
         <motion.div
-          variants={container(2.5)}
+          variants={container(1.2)}
           initial="hidden"
           animate="visible"
           className="w-full lg:w-1/2"
@@ -58,7 +59,10 @@ function About() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex justify-center lg:justify-start ">
-              <p className="text-justify my- max-w-xl py-6 ">{About_Context}</p>
+              <p className="text-justify  max-w-xl py-6 ">{About_Context}</p>
+            </div>
+            <div className="max-w-xl py-6 ">
+              <FlightAnimation />
             </div>
           </motion.div>
         </motion.div>
