@@ -7,11 +7,11 @@ import { FaFigma } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const container = (delay) => ({
-  hidden: { x: -100, opacity: 0 },
+  hidden: { y: -50, opacity: 0 },
   visible: {
-    x: 0,
+    y: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: delay },
+    transition: { duration: 1, delay: delay },
   },
 });
 
@@ -31,7 +31,7 @@ const iconVar = (duration) => ({
 function TechLang() {
   return (
     <div className="border-b border-neutral-800 pb-24">
-      <motion.div variants={container(0)} initial="hidden" animate="visible">
+      <motion.div variants={container(0.5)} initial="hidden" animate="visible">
         <motion.h1
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -10 }}
@@ -44,7 +44,7 @@ function TechLang() {
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.1 }}
+        transition={{ duration: 1, delay: 0.5 }}
       >
         <motion.div
           whileInView={{ opacity: 1, y: 0 }}

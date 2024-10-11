@@ -45,18 +45,32 @@ const Home = () => {
   }, [controls]);
 
   return (
-    <div className="border-b border-neutral-800 pb-4 lg:mb-35">
+    <motion.div
+      layout
+      initial={{
+        y: 150,
+        x: 0,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        x: 0,
+        opacity: 1,
+      }}
+      transition={{ duration: 1 }}
+      className="border-b border-neutral-800 pb-4 lg:mb-35"
+    >
       <div className="flex flex-wrap">
         <div className="w-full lg:w-1/2">
           <motion.div
-            variants={container(0)}
+            variants={container(0.5)}
             initial="hidden"
             animate="visible"
             className=" flex-col items-center lg:items-start"
           >
-            <motion.h1 className="pb-8 text-6xl font-thin tracking-tight lg:mt-8 lg:text-8xl">
+            <h1 className="pb-8 text-6xl font-thin tracking-tight lg:mt-8 lg:text-8xl">
               Daniel Kwan
-            </motion.h1>
+            </h1>
 
             <motion.div
               variants={container(0.5)}
@@ -121,7 +135,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

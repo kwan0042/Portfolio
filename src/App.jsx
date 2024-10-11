@@ -15,14 +15,14 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowMainContent(true);
-    }, 3500);
+    }, 2300);
 
     return () => clearTimeout(timer);
   }, []);
   return (
     <Router>
       <div className="overflow-x-hidden text-neutral-300 antialiased  selection:text-cy-cyan-900">
-        {!showMainContent && <Start />}
+        <Start />
         {showMainContent && (
           <>
             <div className="fixed top-0 -z-10 h-full w-full">

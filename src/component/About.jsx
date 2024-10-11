@@ -17,7 +17,7 @@ function About() {
         variants={container(1)}
         initial="hidden"
         animate="visible"
-        className="my-20 text-center text-4xl"
+        className="mt-20 mb-10 text-center text-4xl"
       >
         About Me
       </motion.h1>

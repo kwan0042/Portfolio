@@ -6,6 +6,14 @@ import { motion } from "framer-motion";
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isBackgroundShow, setisBackgroundShow] = useState(false);
+  const container = (delay) => ({
+    hidden: { y: -100, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 1, delay: delay },
+    },
+  });
 
   const handleScroll = () => {
     if (window.scrollY > 25) {
@@ -30,7 +38,12 @@ export const Navbar = () => {
         isBackgroundShow ? "bg-slate-700 bg-opacity-95" : ""
       }`}
     >
-      <div className="flex flex-shrink-0 items-center">
+      <motion.div
+        variants={container(0.5)}
+        initial="hidden"
+        animate="visible"
+        className="flex flex-shrink-0 items-center"
+      >
         <motion.img
           className={`mx-2 transition-all duration-300 ${
             isScrolled ? "w-[100px]" : "w-[200px]"
@@ -38,8 +51,13 @@ export const Navbar = () => {
           src={logo}
           alt="logo"
         />
-      </div>
-      <div className="m-8 flex items-center justify-center gap-4 text-2xl">
+      </motion.div>
+      <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="m-8 flex items-center justify-center gap-4 text-2xl"
+      >
         <a href="https://www.linkedin.com/in/danielxkwan/">
           <FaLinkedin />
         </a>
@@ -49,7 +67,7 @@ export const Navbar = () => {
         <a href="https://www.instagram.com/daniel_kwan">
           <FaInstagram />
         </a>
-      </div>
+      </motion.div>
     </nav>
   );
 };
