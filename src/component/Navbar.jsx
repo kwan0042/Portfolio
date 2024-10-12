@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo/nameLogo_W.png";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -44,13 +45,15 @@ export const Navbar = () => {
         animate="visible"
         className="flex flex-shrink-0 items-center"
       >
-        <motion.img
-          className={`mx-2 transition-all duration-300 ${
-            isScrolled ? "w-[100px]" : "w-[200px]"
-          } `}
-          src={logo}
-          alt="logo"
-        />
+        <Link to="/">
+          <motion.img
+            className={`mx-2 transition-all duration-300 ${
+              isScrolled ? "w-[100px]" : "w-[200px]"
+            } `}
+            src={logo}
+            alt="logo"
+          />
+        </Link>
       </motion.div>
       <motion.div
         initial={{ x: 100, opacity: 0 }}

@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowMainContent(true);
-    }, 2300);
+    }, 2160);
 
     return () => clearTimeout(timer);
   }, []);
@@ -45,7 +45,7 @@ function App() {
                   }
                 />
 
-                <Route path="/gra_des/:designId" element={<GraphicPj />} />
+                <Route path="/graphic/:designId" element={<GraphicPj />} />
               </Routes>
             </div>
           </>

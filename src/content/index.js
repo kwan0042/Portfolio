@@ -1,13 +1,19 @@
-import rise_1 from "../assets/project_pic/rise_1.png";
-import tv_1 from "../assets/project_pic/tv_1.jpg";
-import baker_1 from "../assets/project_pic/baker_1.png";
-import book_1 from "../assets/project_pic/book_1.png";
-import graPortfolio_1 from "../assets/project_pic/graPortfolio_1.png";
-import pdo_1 from "../assets/project_pic/pdo_1.png";
-import camrt_1 from "../assets/project_pic/camrt_1.png";
-import imageofcare_1 from "../assets/project_pic/imageofcare_1.png";
-import edasummit_1 from "../assets/project_pic/edasummit_1.png";
-import solace_1 from "../assets/project_pic/solace_1.png";
+import rise_1 from "../assets/webproject_pic/rise_1.png";
+import tv_1 from "../assets/webproject_pic/tv_1.jpg";
+import baker_1 from "../assets/webproject_pic/baker_1.png";
+import book_1 from "../assets/webproject_pic/book_1.png";
+import graPortfolio_1 from "../assets/webproject_pic/graPortfolio_1.png";
+import pdo_1 from "../assets/webproject_pic/pdo_1.png";
+import camrt_1 from "../assets/webproject_pic/camrt_1.png";
+import imageofcare_1 from "../assets/webproject_pic/imageofcare_1.png";
+import edasummit_1 from "../assets/webproject_pic/edasummit_1.png";
+import solace_1 from "../assets/webproject_pic/solace_1.png";
+
+//graphic project
+
+import CAS_cover from "../assets/graphicproject/CAS/CAS_cover.png";
+import CAS_1 from "../assets/graphicproject/CAS/CAS_1.png";
+import CAS_2 from "../assets/graphicproject/CAS/CAS_2.png";
 
 export const About_Context = `Born and raised in Hong Kong, I’ve always had a curious, creative mindset. Although my background began in marketing and management, I taught myself web development, design, and filmmaking, eventually turning these skills into a fulfilling career. Now based in Toronto, I continue to grow and explore new ideas, whether that’s through coding, editing travel footage, or planning my next big adventure.`;
 export const Experience_List = [
@@ -208,14 +214,30 @@ export const Projects_List_Web = [
     projectType: "web",
   },
   {
-    title: "Design1",
-    slug: "Design1",
-    date: "2024-04-13",
-    image: solace_1,
+    title: "CAS Booklet",
+    slug: "CASBooklet",
+    date: "2020-11-28",
+    coverImage: CAS_cover,
+    image: [CAS_1, CAS_2],
     type: "Event",
     description: "",
-    client: "Hong Kong Red Cross",
+    client: "Hong Kong Civil Aid Service",
     projectType: "graphic",
+    summary:
+      "Designed a booklet for the HK Civil Aid Service Cadet Corps Presentation Ceremony 2020, incorporating event details, layout design, and visual elements.",
+  },
+  {
+    title: "CAS Booklet",
+    slug: "CASBooklet",
+    date: "2020-11-28",
+    coverImage: CAS_cover,
+    image: [CAS_1, CAS_2],
+    type: "Event",
+    description: "",
+    client: "Hong Kong Civil Aid Service",
+    projectType: "graphic",
+    summary:
+      "Designed a booklet for the HK Civil Aid Service Cadet Corps Presentation Ceremony 2020, incorporating event details, layout design, and visual elements.",
   },
 ];
 

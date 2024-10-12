@@ -1,11 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { Projects_List_Web } from "../content";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Projects() {
   const [projectList, setProjectList] = useState("web_projects");
+  const location = useLocation();
+
+  useEffect(() => {
+    // Parse the query parameter
+    const params = new URLSearchParams(location.search);
+    const projectType = params.get("projectType");
+
+    // If the hash is #projects and a valid projectType is found, update the project list
+    if (location.hash === "#projects" && projectType) {
+      setProjectList(projectType);
+    }
+  }, [location]);
 
   const filteredProjects = Projects_List_Web.filter(
     (project) =>
@@ -30,7 +42,7 @@ function Projects() {
   };
 
   return (
-    <div className="border-b border-neutral-800 pb-4">
+    <div id="projects" className="border-b border-neutral-800 pb-4">
       <h1 className="mt-20 text-center text-4xl">Projects</h1>
       <nav className="my-10">
         <ul className="flex justify-center ">
@@ -69,15 +81,50 @@ function Projects() {
         {projectList === "graphic_projects" ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {filteredProjects.map((pjw, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <Link to={`/gra_des/${pjw.slug}`}>
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+              >
+                <Link to={`/graphic/${pjw.slug}`}>
                   <motion.img
-                    whileHover={{ scale: 1.1 }}
-                    src={pjw.image}
+                    whileHover={{}}
+                    src={pjw.coverImage}
                     alt={pjw.title}
-                    className="rounded h-[200px] object-cover object-top"
+                    className="rounded  object-cover object-top"
                   />
                 </Link>
+                <div className="p-5">
+                  <Link to={`/graphic/${pjw.slug}`}>
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      {pjw.title}
+                    </h5>
+                  </Link>
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    {pjw.summary}
+                  </p>
+                  <Link
+                    to={`/graphic/${pjw.slug}`}
+                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    Read more
+                    <svg
+                      className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 14 10"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M1 5h12m0 0L9 1m4 4L9 9"
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -89,13 +136,15 @@ function Projects() {
               className="mb-8 flex flex-wrap lg:justify-center"
             >
               <div className="w-full lg:w-1/4 pr-5 mb-6">
-                <motion.img
-                  whileHover={{ scale: 1.1 }}
-                  src={pjw.image}
-                  width={250}
-                  alt={pjw.title}
-                  className=" rounded h-[200px] object-cover object-top"
-                />
+                <a href={pjw.url}>
+                  <motion.img
+                    whileHover={{ scale: 1.05 }}
+                    src={pjw.image}
+                    width={250}
+                    alt={pjw.title}
+                    className=" rounded h-[200px] object-cover object-top"
+                  />
+                </a>
               </div>
               <motion.div
                 variants={itemVariants}
