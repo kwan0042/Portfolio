@@ -54,6 +54,7 @@ export const Navbar = () => {
             alt="logo"
           />
         </Link>
+        
       </motion.div>
       <motion.div
         initial={{ x: 100, opacity: 0 }}
