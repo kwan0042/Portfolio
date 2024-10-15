@@ -25,6 +25,30 @@
 
       gtag('config', 'G-X4WT7MEP8F');
     </script>
+    <script>
+      // 定義 dataLayer 和 gtag 函式。
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+
+      // 重要事項 - 請勿直接複製或/貼上而不修改地區清單
+      // 根據您的需求，為特定區域設定預設同意聲明
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'regions': [<list of ISO 3166 - 2 region codes >]
+      });
+      // 根據您的需求，為所有其他區域設定預設同意聲明
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied'
+      });
+
+    </script>
+    <!--Banner script here!-->
   </head>
 
   <body>
