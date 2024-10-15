@@ -26,29 +26,40 @@
       gtag('config', 'G-X4WT7MEP8F');
     </script>
     <script>
-      // 定義 dataLayer 和 gtag 函式。
+      // Define dataLayer and the gtag function.
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
 
-      // 重要事項 - 請勿直接複製或/貼上而不修改地區清單
-      // 根據您的需求，為特定區域設定預設同意聲明
-      gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'denied',
-        'regions': [<list of ISO 3166 - 2 region codes >]
-      });
-      // 根據您的需求，為所有其他區域設定預設同意聲明
+      // Set default consent to 'denied' as a placeholder
+      // Determine actual values based on your own requirements
       gtag('consent', 'default', {
         'ad_storage': 'denied',
         'ad_user_data': 'denied',
         'ad_personalization': 'denied',
         'analytics_storage': 'denied'
       });
-
     </script>
-    <!--Banner script here!-->
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-5LPBPH45');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Create one update function for each consent parameter -->
+    <script>
+      function consentGrantedAdStorage() {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted'
+        });
+      }
+    </script>
+    <!-- Invoke your consent functions when a user interacts with your banner -->
   </head>
 
   <body>
@@ -57,7 +68,9 @@
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
+    <button onclick="consentGrantedAdStorage()">Yes</button>
     <script type="module" src="/src/main.jsx"></script>
+
   </body>
 
 </html>
