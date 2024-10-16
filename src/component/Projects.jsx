@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-
 import { Projects_List_Web } from "../content";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -41,6 +40,19 @@ function Projects() {
     visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
   };
 
+  const [hoveredItem, setHoveredItem] = useState(null);
+
+  const hoverVariants = {
+    hover: {
+      x: 4,
+      scale: [1.1, 1],
+    },
+    initial: {
+      x: 0,
+      scale: 1,
+    },
+  };
+
   return (
     <div id="projects" className="border-b border-neutral-800 pb-4">
       <h1 className="mt-20 text-center text-4xl">Projects</h1>
@@ -79,51 +91,58 @@ function Projects() {
         key={projectList}
       >
         {projectList === "graphic_projects" ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className=" grid lg:grid-cols-3 sm:grid-cols-2 md:grid-cols-2 gap-10 justify-items-center">
             {filteredProjects.map((pjw, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+                className="max-w-sm  bg-teal-100/90 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 "
               >
                 <Link to={`/graphic/${pjw.slug}`}>
                   <motion.img
                     whileHover={{}}
                     src={pjw.coverImage}
                     alt={pjw.title}
-                    className="rounded  object-cover object-top"
+                    className="h-[300px] w-full rounded  object-cover object-center"
                   />
                 </Link>
-                <div className="p-5">
+                <div className="px-3 py-3 flex-grow flex flex-col">
                   <Link to={`/graphic/${pjw.slug}`}>
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                       {pjw.title}
                     </h5>
                   </Link>
+
                   <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                     {pjw.summary}
                   </p>
-                  <Link
-                    to={`/graphic/${pjw.slug}`}
-                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  >
-                    Read more
-                    <svg
-                      className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 14 10"
+                  <div className="mt-auto">
+                    <Link
+                      onMouseEnter={() => setHoveredItem(index)}
+                      onMouseLeave={() => setHoveredItem(null)}
+                      to={`/graphic/${pjw.slug}`}
+                      className=" h-fit w-fit inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black hover:text-teal-300 bg-sky-50 rounded-lg hover:bg-black focus:ring-4 focus:outline-none  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     >
-                      <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M1 5h12m0 0L9 1m4 4L9 9"
-                      />
-                    </svg>
-                  </Link>
+                      Read more
+                      <motion.svg
+                        variants={hoverVariants}
+                        animate={hoveredItem === index ? "hover" : "initial"}
+                        className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 14 10"
+                      >
+                        <path
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M1 5h12m0 0L9 1m4 4L9 9"
+                        />
+                      </motion.svg>
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             ))}

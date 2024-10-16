@@ -15,6 +15,29 @@ import CAS_cover from "../assets/graphicproject/CAS/CAS_cover.png";
 import CAS_1 from "../assets/graphicproject/CAS/CAS_1.png";
 import CAS_2 from "../assets/graphicproject/CAS/CAS_2.png";
 
+import BTJ_cover from "../assets/graphicproject/BetrueJewellery/BTJ_cover.jpg";
+import BTJ_1 from "../assets/graphicproject/BetrueJewellery/BTJ_1.jpg";
+import BTJ_2 from "../assets/graphicproject/BetrueJewellery/BTJ_2.png";
+import BTJ_3 from "../assets/graphicproject/BetrueJewellery/BTJ_3.png";
+import BTJ_4 from "../assets/graphicproject/BetrueJewellery/BTJ_4.jpg";
+
+import yx_cover from "../assets/graphicproject/YueXiu/yx_cover.jpeg";
+import yx_1 from "../assets/graphicproject/YueXiu/yx_1.jpeg";
+import yx_2 from "../assets/graphicproject/YueXiu/yx_2.jpeg";
+import yx_3 from "../assets/graphicproject/YueXiu/yx_3.jpeg";
+import yx_4 from "../assets/graphicproject/YueXiu/yx_4.jpeg";
+import yx_6 from "../assets/graphicproject/YueXiu/yx_6.jpeg";
+import yx_7 from "../assets/graphicproject/YueXiu/yx_7.jpeg";
+import yx_8 from "../assets/graphicproject/YueXiu/yx_8.jpeg";
+import yx_9 from "../assets/graphicproject/YueXiu/yx_9.jpeg";
+import yx_10 from "../assets/graphicproject/YueXiu/yx_10.jpeg";
+import yx_11 from "../assets/graphicproject/YueXiu/yx_11.jpeg";
+import yx_12 from "../assets/graphicproject/YueXiu/yx_12.jpeg";
+import yx_13 from "../assets/graphicproject/YueXiu/yx_13.jpeg";
+import yx_15 from "../assets/graphicproject/YueXiu/yx_15.jpeg";
+import yx_16 from "../assets/graphicproject/YueXiu/yx_16.jpeg";
+import yx_17 from "../assets/graphicproject/YueXiu/yx_17.jpeg";
+
 export const About_Context = `Born and raised in Hong Kong, I’ve always had a curious, creative mindset. Although my background began in marketing and management, I taught myself web development, design, and filmmaking, eventually turning these skills into a fulfilling career. Now based in Toronto, I continue to grow and explore new ideas, whether that’s through coding, editing travel footage, or planning my next big adventure.`;
 export const Experience_List = [
   {
@@ -227,17 +250,77 @@ export const Projects_List_Web = [
       "Designed a booklet for the HK Civil Aid Service Cadet Corps Presentation Ceremony 2020, incorporating event details, layout design, and visual elements.",
   },
   {
-    title: "CAS Booklet",
-    slug: "CASBooklet",
-    date: "2020-11-28",
-    coverImage: CAS_cover,
-    image: [CAS_1, CAS_2],
-    type: "Event",
+    title: "Betrue Jewellery Logo & Package Design",
+    slug: "BetrueJewellery",
+    date: "2020-09-12",
+    coverImage: BTJ_cover,
+    image: [BTJ_1, BTJ_2, BTJ_3, BTJ_4],
+    type: "E-commerce",
     description: "",
-    client: "Hong Kong Civil Aid Service",
+    client: "Betrue Jewellery",
     projectType: "graphic",
     summary:
-      "Designed a booklet for the HK Civil Aid Service Cadet Corps Presentation Ceremony 2020, incorporating event details, layout design, and visual elements.",
+      "Developed the branding for Betrue Jewellery's Instagram shop, drawing inspiration from the elegance and brilliance of diamonds. Crafted a sleek logo and designed packaging that reflects the multifaceted beauty of the gemstone, showcasing creativity and attention to detail in every element.",
+  },
+  {
+    title: "YueXiu 2018 Annuel Dinner",
+    slug: "YueXiu",
+    date: "2018-05-08",
+    coverImage: yx_cover,
+    image: [
+      yx_1,
+      yx_9,
+      yx_2,
+      yx_10,
+      yx_3,
+      yx_4,
+      yx_6,
+      yx_7,
+      yx_8,
+      yx_11,
+      yx_12,
+      yx_15,
+      yx_13,
+      yx_16,
+      yx_17,
+    ],
+    type: "Event",
+    description:
+      "Developed a comprehensive visual identity for The Federation of Yue Xiu Associations' 2018 annual dinner and football competition. Leveraging a cohesive design strategy, I created the event theme logo, backdrop, posters, photo booth setup, props, name tags, trophies, and T-shirts. Each element was meticulously crafted to reinforce the event's branding, ensuring a seamless and engaging attendee experience.",
+    client: "The Federation of Yue Xiu Associations​​",
+    projectType: "graphic",
+    summary:
+      "Crafted a unified visual identity for The Federation of Yue Xiu Associations' 2018 annual dinner and football competition, designing the event theme logo, backdrop, posters, photo booth, props, name tags, trophies, and T-shirts.",
+  },
+  {
+    title: "YueXiu 2018 Annuel Dinner",
+    slug: "YueXiu",
+    date: "2018-05-08",
+    coverImage: yx_cover,
+    image: [
+      yx_1,
+      yx_9,
+      yx_2,
+      yx_10,
+      yx_3,
+      yx_4,
+      yx_6,
+      yx_7,
+      yx_8,
+      yx_11,
+      yx_12,
+      yx_15,
+      yx_13,
+      yx_16,
+      yx_17,
+    ],
+    type: "Event",
+    description:
+      "Developed a comprehensive visual identity for The Federation of Yue Xiu Associations' 2018 annual dinner and football competition. Leveraging a cohesive design strategy, I created the event theme logo, backdrop, posters, photo booth setup, props, name tags, trophies, and T-shirts. Each element was meticulously crafted to reinforce the event's branding, ensuring a seamless and engaging attendee experience.",
+    client: "The Federation of Yue Xiu Associations​​",
+    projectType: "graphic",
+    summary:
+      "Crafted a unified visual identity for The Federation of Yue Xiu Associations' 2018 annual dinner and football competition, designing the event theme logo, backdrop, posters, photo booth, props, name tags, trophies, and T-shirts.",
   },
 ];
 

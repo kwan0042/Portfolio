@@ -70,7 +70,7 @@ function Experience() {
           <div key={index} className=" flex flex-wrap lg:justify-center">
             <div className="relative  border-gray-200 dark:border-gray-700 border-s w-full lg:w-1/4 ">
               <li className="ms-6">
-                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full md:-start-5 sm:-start-5 lg:-start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                   <svg
                     className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
                     aria-hidden="true"
@@ -82,7 +82,9 @@ function Experience() {
                   </svg>
                 </span>
 
-                <p className="mb-2 text-sm text-neutral-400">{exp.year}</p>
+                <p className="mb-2 lg:pl-2 text-sm text-neutral-400">
+                  {exp.year}
+                </p>
               </li>
             </div>
             <div className="w-full max-w-xl flex flex-wrap lg:w-3/4 ms-6 pb-8">
