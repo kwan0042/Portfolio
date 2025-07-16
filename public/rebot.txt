@@ -8,4 +8,4 @@ Allow: /blog/public-posts/
 Disallow: /staging/
 Allow: /staging/public-preview/
 Disallow: /search-results/
-Sitemap: https://www.yourdomain.com/sitemap.xml
+Sitemap: https://danielkwan.pages.dev/sitemap.xml
