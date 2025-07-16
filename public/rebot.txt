@@ -1,0 +1,11 @@
+User-agent: Googlebot
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp_files/
+Disallow: /uploads/*.zip$
+Disallow: /old-page.html
+Allow: /blog/public-posts/
+Disallow: /staging/
+Allow: /staging/public-preview/
+Disallow: /search-results/
+Sitemap: https://www.yourdomain.com/sitemap.xml
